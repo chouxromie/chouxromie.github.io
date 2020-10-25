@@ -13,8 +13,8 @@ function Check()
   var garden_full = parseInt(document.getElementsByName("garden_full")[0].value);
   //var winter_full = parseInt(document.getElementsByName("winter_full")[0].value);
 
-  if (Number.isNaN(world_full)) world_full = 200000;
-  if (Number.isNaN(garden_full)) garden_full = 200000;
+  if (Number.isNaN(world_full)) world_full = 300000;
+  if (Number.isNaN(garden_full)) garden_full = 300000;
   //if (Number.isNaN(winter_full)) winter_full = 200000;
 
   var world_time = parseInt(document.getElementsByName("world_time")[0].value);
