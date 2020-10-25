@@ -1,0 +1,132 @@
+body {
+  font-family: 돋움;
+  font-size: 9pt;
+}
+
+table {
+  border-collapse: collapse;
+  border: 1px solid black;
+  font-family: 돋움;
+  font-size: 9pt;
+}
+
+th {
+  background-color: #D5D5D5;
+}
+
+th, tr, td {
+  border: 1px solid gray;
+  padding: 2px 5px 2px 5px;
+  font-family: 돋움;
+  font-size: 9pt;
+}
+
+input {
+  font-family: 돋움;
+  font-size: 9pt;
+}
+
+.world {
+  background-color: #B2CCFF;
+}
+
+.garden {
+  background-color: #B7F0B1;
+}
+
+.musicon {
+  background-color: #FAED7D;
+}
+
+.winter {
+  background-color: #B2EBF4;
+}
+
+.min {
+  background-color: #FFA7A7;
+}
+
+.stepped {
+  font-weight: bold;
+}
+
+.result_row {
+  border-top: 3px double gray;
+}
+
+.result_cell {
+  text-align: center;
+}
+
+.warning {
+  color: red;
+}
+
+.alert_table {
+  border: 0px;
+}
+
+.alert {
+  padding: 5px;
+  border: 0px;
+  line-height: 1.5;
+}
+
+.alert_header {
+  padding: 5px;
+  color: red;
+  font-size: 12pt;
+  text-align: center;
+  font-weight: bold;
+}
+
+.one_ad {
+  color: green;
+}
+
+.full_ads {
+  color: blue;
+}
+
+.tooltip {
+  color: red;
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  width: 200px;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -60px;
+
+  visibility: hidden;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+.contents-wrap {
+   min-height: 95%;
+   position: relative;
+   padding-bottom: 30px;/* footer height */
+}
+
+.footer {
+  width: 80%;
+  height: 30px;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+}
