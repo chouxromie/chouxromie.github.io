@@ -1,6 +1,6 @@
 function Load()
 {
-  document.getElementById("version").textContent = "20201025";
+  document.getElementById("version").textContent = "20201025.2";
 }
 
 function Check()
