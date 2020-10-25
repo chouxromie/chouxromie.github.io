@@ -1,25 +1,25 @@
 function Load()
 {
-  document.getElementById("version").textContent = "20201024";
+  document.getElementById("version").textContent = "20201025";
 }
 
 function Check()
 {
   var world_target = parseInt(document.getElementsByName("world_target")[0].value);
   var garden_target = parseInt(document.getElementsByName("garden_target")[0].value);
-  var winter_target = parseInt(document.getElementsByName("winter_target")[0].value);
+  //var winter_target = parseInt(document.getElementsByName("winter_target")[0].value);
 
   var world_full = parseInt(document.getElementsByName("world_full")[0].value);
   var garden_full = parseInt(document.getElementsByName("garden_full")[0].value);
-  var winter_full = parseInt(document.getElementsByName("winter_full")[0].value);
+  //var winter_full = parseInt(document.getElementsByName("winter_full")[0].value);
 
   if (Number.isNaN(world_full)) world_full = 200000;
   if (Number.isNaN(garden_full)) garden_full = 200000;
-  if (Number.isNaN(winter_full)) winter_full = 200000;
+  //if (Number.isNaN(winter_full)) winter_full = 200000;
 
   var world_time = parseInt(document.getElementsByName("world_time")[0].value);
   var garden_time = parseInt(document.getElementsByName("garden_time")[0].value);
-  var winter_time = parseInt(document.getElementsByName("winter_time")[0].value);
+  //var winter_time = parseInt(document.getElementsByName("winter_time")[0].value);
 
   var world_ads = 7500
   var other_ads = 5000
@@ -30,7 +30,7 @@ function Check()
 
   var world_fulls = new Array();
   var garden_fulls = new Array();
-  var winter_fulls = new Array();
+  //var winter_fulls = new Array();
 
   var tbody_result = document.getElementById("tbody_result");
   var tbody_sum = document.getElementById("tbody_sum");
@@ -49,32 +49,32 @@ function Check()
   {
     world_fulls.push(Math.round(world_full * (1 + 0.05 * i)));
     garden_fulls.push(Math.round(garden_full * (1 + 0.05 * i)));
-    winter_fulls.push(Math.round(winter_full * (1 + 0.05 * i)));
+    //winter_fulls.push(Math.round(winter_full * (1 + 0.05 * i)));
   }
 
   var world_result = new Array();
   var garden_result = new Array();
-  var winter_result = new Array();
+  //var winter_result = new Array();
   world_result = CalculateOneThemepark("리치월드", "world", world_target, world_fulls, world_ads, world_energy, world_truck, world_time);
-  garden_result = CalculateOneThemepark("리치가든", "garden", garden_target, garden_fulls, other_ads, other_energy, other_truck, garden_time);
-  winter_result = CalculateOneThemepark("윈터랜드", "winter", winter_target, winter_fulls, other_ads, other_energy, other_truck, winter_time);
+  garden_result = CalculateOneThemepark("담당 템팤", "garden", garden_target, garden_fulls, other_ads, other_energy, other_truck, garden_time);
+  //winter_result = CalculateOneThemepark("윈터랜드", "winter", winter_target, winter_fulls, other_ads, other_energy, other_truck, winter_time);
 
   var result_row = tbody_result.insertRow(tbody_result.rows.length);
   result_row.className = "result_row";
   var a_cell = result_row.insertCell(0);
   a_cell.innerHTML = "<b>총합</b>";
   var a_cell = result_row.insertCell(1);
-  a_cell.innerHTML = world_result[0] + garden_result[0] + winter_result[0];
+  a_cell.innerHTML = world_result[0] + garden_result[0];
   var a_cell = result_row.insertCell(2);
-  a_cell.innerHTML = numberWithCommas(world_result[1] + garden_result[1] + winter_result[1]);
+  a_cell.innerHTML = numberWithCommas(world_result[1] + garden_result[1]);
   var result_cell = result_row.insertCell(3);
-  result_cell.innerHTML = "<b>" + numberWithCommas(world_result[2] + garden_result[2] + winter_result[2]) + "</b>";
+  result_cell.innerHTML = "<b>" + numberWithCommas(world_result[2] + garden_result[2]) + "</b>";
   var a_cell = result_row.insertCell(4);
-  a_cell.innerHTML = numberWithCommas(world_result[3] + garden_result[3] + winter_result[3]);
+  a_cell.innerHTML = numberWithCommas(world_result[3] + garden_result[3]);
   var a_cell = result_row.insertCell(5);
-  a_cell.innerHTML = numberWithCommas(world_result[4] + garden_result[4] + winter_result[4]);
+  a_cell.innerHTML = numberWithCommas(world_result[4] + garden_result[4]);
   var a_cell = result_row.insertCell(6);
-  var total_time = world_result[5] + garden_result[5] + winter_result[5];
+  var total_time = world_result[5] + garden_result[5];
   var total_time_min = Math.floor(total_time / 60)
   var total_time_sec = total_time % 60;
   a_cell.innerHTML = total_time_min + "분 " + total_time_sec + "초";
@@ -87,8 +87,8 @@ function Check()
   var a2 = alert_row2.insertCell(0);
   a2.innerHTML = "경선 전 준비해야 하는 광고의 총 수량은 <br>"+
                 "아래 결과표의 하단, 총합 값 + 납품용 트럭의 광고 최대치입니다. (풀광고 납품을 위해)<br>" +
-                "예시) 납품용 트럭 광고 최대치: 57,500 / 경선에 소모되는 광고 총합: 97,500<br>" +
-                "&nbsp;&nbsp;&nbsp;&nbsp;▶ 준비해야 하는 광고 총량 = 57,500 + 97,500 = 155,000";
+                "예시) 납품용 트럭 광고 최대치: 57,500 / 경선에 소모되는 광고 총합: 135,000<br>" +
+                "&nbsp;&nbsp;&nbsp;&nbsp;▶ 준비해야 하는 광고 총량 = 57,500 + 135,000 = 192,500";
   a2.className = "alert";
 }
 
