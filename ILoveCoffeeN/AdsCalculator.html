@@ -1,0 +1,147 @@
+<html>
+<head>
+<title>경선 납품 계산기</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body onLoad="Load()">
+  <div class="contents-wrap">
+    <table>
+      <tr>
+        <tr>
+          <td style="text-align: center;" colspan="5">
+            Ver. <span id="version"></span><br />
+            이 페이지는 크롬에 최적화되어 있습니다!<br />
+            현재 버전은 인터넷 익스플로러에선 작동하지 않습니다! ㅠ_ㅠ<br />
+            필수 입력 칸에 데이터를 입력하지 않으면 기본값(200,000)으로 계산됩니다.<br />
+            비밀번호는 길드 공지 확인해주세요.<br />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            FAQ
+          </td>
+          <td style="line-height: 1.5;" colspan="4">
+            <a href="#" onclick="toggle_deliver_guide()">※ 경선 전 납품량 입력 방법</a>
+            <br />
+            <div id="deliver_guide" isShow="false" style="display: none;">
+              <img src="images/deliver_example.png" width="512px"/>
+              <br />
+              ▶ 참고) 실제 경선시에는, 대부분의 경우 납품량이 대결 수익보다 높게 나옵니다.
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            참고!
+          </td>
+          <td colspan="2">
+            * 리치월드<br />
+            &nbsp;&nbsp;- 풀광고시 광고 소모량 : 7,500<br />
+            &nbsp;&nbsp;- 1회 납품시 에너지 소모량 : 750<br />
+            &nbsp;&nbsp;- 1회 납품시 트럭 내구도 소모량 : 150<br />
+          </td>
+          <td colspan="2">
+            * 그 외 테마파크 (가든, 뮤지콘, 윈터랜드, 아일랜드)<br />
+            &nbsp;&nbsp;- 풀광고시 광고 소모량 : 5,000<br />
+            &nbsp;&nbsp;- 1회 납품시 에너지 소모량 : 500<br />
+            &nbsp;&nbsp;- 1회 납품시 트럭 내구도 소모량 : 100<br />
+          </td>
+        </tr>
+        <td rowspan="3">
+          필수 입력
+        </td>
+        <td class="world">리치월드 풀광고 납품량</td>
+        <td><input type="number" size="10" name="world_full" placeholder="200000"></td>
+      </tr>
+      <tr>
+        <td class="garden">리치가든 풀광고 납품량</td>
+        <td><input type="number" size="10" name="garden_full" placeholder="200000"></td>
+      </tr>
+      <tr>
+        <td class="winter">리치윈터 풀광고 납품량</td>
+        <td><input type="number" size="10" name="winter_full" placeholder="200000"></td>
+      </tr>
+      <tr>
+        <td rowspan="3">
+          기타 옵션
+        </td>
+        <td class="world">리치월드 목표 납품량</td>
+        <td><input type="number" size="10" value="1900000" name="world_target"></td>
+          <td class="world">월드 왕복 시간 (초)</td>
+          <td><input type="number" size="5" name="world_time" value="60">초</td>
+      </tr>
+      <tr>
+        <td class="garden">리치가든 목표 납품량</td>
+        <td><input type="number" size="10" value="1100000" name="garden_target"></td>
+          <td class="garden">가든 왕복 시간 (초)</td>
+          <td><input type="number" size="5" name="garden_time" value="60">초</td>
+      </tr>
+      <tr>
+        <td class="winter">리치윈터 목표 납품량</td>
+        <td><input type="number" size="10" value="1100000" name="winter_target"></td>
+          <td class="winter">윈터 왕복 시간 (초)</td>
+          <td><input type="number" size="5" name="winter_time" value="60">초</td>
+      </tr>
+    </table>
+    <br />
+    <input type="text" size="20" name="as" placeholder="비밀번호"/>
+    <input type="button" value="계산하기" onClick="Check()">
+    <br />
+    <br />
+    <table>
+      <tbody id="tbody_alert">
+
+      </tbody>
+    </table>
+
+    <br />
+    <br />
+
+    <table name="ResultTable">
+      <thead>
+        <th>
+          납품하는 곳
+        </th>
+        <th>
+          풀광고 횟수
+        </th>
+        <th>
+          총 납품량
+        </th>
+        <th>
+          사용되는 광고량
+        </th>
+        <th>
+          사용되는 에너지
+        </th>
+        <th>
+          사용되는 트럭 내구도
+        </th>
+        <th>
+          예상 소요 시간
+        </th>
+      </thead>
+
+      <tbody id="tbody_result">
+
+      </tbody>
+    </table>
+
+    <br />
+    <br />
+
+    <table>
+      <tbody id="tbody_sum">
+
+      </tbody>
+    </table>
+
+    <div class="footer">
+      <hr />
+      Copyright &copy; 2020. huis-snow. All rights reserved.
+    </div>
+  </div>
+</body>
+<script src="helper.js"></script>
+</html>
