@@ -1,6 +1,6 @@
 function Load()
 {
-  document.getElementById("version").textContent = "20201107";
+  document.getElementById("version").textContent = "20201107.2";
 }
 
 function Check()
@@ -39,7 +39,7 @@ function Check()
   while (tbody_sum.rows.length > 0) tbody_sum.deleteRow(0);
   while (tbody_alert.rows.length > 0) tbody_alert.deleteRow(0);
 
-  if (btoa(encodeURIComponent(document.getElementsByName("as")[0].value)) != 'JUVEJTgyJUI5JUVCJTlEJUJDJUVCJUI5JTg0JUVDJUI5JUI0')
+  if (btoa(encodeURIComponent(document.getElementsByName("as")[0].value)) != 'JUVDJUI5JTk4JUVDJUE2JTg4JUVDJThBJUE0JUVEJThCJUIx')
   {
     alert("비밀번호가 틀렸습니다.");
     return;
