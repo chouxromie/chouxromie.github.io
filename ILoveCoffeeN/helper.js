@@ -1,6 +1,6 @@
 function Load()
 {
-  document.getElementById("version").textContent = "20201104";
+  document.getElementById("version").textContent = "20201107";
 }
 
 function Check()
@@ -56,8 +56,8 @@ function Check()
   var garden_result = new Array();
   var winter_result = new Array();
   world_result = CalculateOneThemepark("리치월드", "world", world_target, world_fulls, world_ads, world_energy, world_truck, world_time);
-  garden_result = CalculateOneThemepark("테마파크3", "garden", garden_target, garden_fulls, other_ads, other_energy, other_truck, garden_time);
-  winter_result = CalculateOneThemepark("담당 템팤", "winter", winter_target, winter_fulls, other_ads, other_energy, other_truck, winter_time);
+  garden_result = CalculateOneThemepark("담당 템팤", "garden", garden_target, garden_fulls, other_ads, other_energy, other_truck, garden_time);
+  winter_result = CalculateOneThemepark("테마파크4", "winter", winter_target, winter_fulls, other_ads, other_energy, other_truck, winter_time);
 
   var result_row = tbody_result.insertRow(tbody_result.rows.length);
   result_row.className = "result_row";
